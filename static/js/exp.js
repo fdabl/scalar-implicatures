@@ -74,8 +74,7 @@ class Experiment {
   save(e) {
     e.preventDefault();
     var id = $(e.target).attr('id');
-    var correct = this.rightAnswer(id);
-    var nr = correct === null ? 0 : correct ? 1 : -1;
+    var correct = this.checkAnswer(id);
 
     if (this.training) { // give feedback
       let mess = null;
@@ -96,16 +95,22 @@ class Experiment {
       }
     }
 
-    this.trialData.push(nr * this.curStim);
-
     if (id == 'bad' || id == 'good') {
+      // bad => -1 * this.curStim
+      // good => 1 * this.curStim
+      // ==> not normativ, but descriptive
+      // (bad means pressed *bad* button, does not necessarily entail wrong answer!)
+
+      var nr = id == 'good' ? 1 : -1;
+      this.trialData.push(nr * this.curStim);
+
       for (let i in _.range(this.maxStim - this.curStim)) {
         this.trialData.push(null);
       }
 
       var type = this.training ? 'training' : this.trial.critical ? 
                                               'critical' : 'control';
-      this.trialData.push(nr > 0);
+      this.trialData.push(correct);
       this.trialData.push(type);
       this.trialData.push(this.trial.sentence);
 
@@ -113,11 +118,17 @@ class Experiment {
       this.trialData = []; // reset for next trial
     }
 
+    else {
+      // more-info => 0
+      this.trialData.push(0);
+    }
+
     return correct === null ? this.nextStim() : this.nextTrial();
   }
 
 
-  rightAnswer(id) {
+  checkAnswer(id) {
+    // return null if 'more-info', true if correct, false if not correct
     if (id == 'more-info') return null;
 
     var correct = this.trial.correct;
