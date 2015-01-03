@@ -1,0 +1,15 @@
+{
+  "name": "implicatures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "Fabian Dablander",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^7.0.3",
+    "es6ify": "^1.6.0"
+  }
+}
