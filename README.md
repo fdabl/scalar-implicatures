@@ -4,7 +4,7 @@
 
 (see also misc/specification.pdf)
 
-The experiment implements a version of of an **incremental
+The experiment implements a version of an **incremental
 verification task** in which binary truth-value judgements are
 collected for sentence-picture pairs,while the picture is only
 incrementally revealed upon subjects' request. The task helps to
