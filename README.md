@@ -4,24 +4,24 @@
 
 (see also misc/specification.pdf)
 
-An implementation of the 'incremental verification task' of (Franke,
-Schlotterbeck & Augurzky, submitted), in which binary truth-value
-judgements are collected for sentence-picture pairs, but in which the
-picture is only incrementally revealed upon the subject's
-request. Using this technique, categorical answers give information
-about the relative preferences of ambiguous sentences.
+The experiment implements a version of of an **incremental
+verification task** in which binary truth-value judgements are
+collected for sentence-picture pairs,while the picture is only
+incrementally revealed upon subjects' request. The task helps to
+obtain information about the relative preferences for different
+readings of potentially ambiguous sentences from categorical answers.
 
 The experiment uses this approach for detecting "scalar implicatures",
-in particular the enrichment of /some/ to /some but not all/. In the
-critical trials in this experiments, subjects must judge a sentence
-like "The bell is connected to some of its triangles" true or false
-with respect to a picture, in which possible connections are only
-partially revealed. Under a semantic reading of /some/, subjects would
-then judge the sentence true in a situation in which they can
-ascertain that there are some relevant connection, while still
-uncertain as to whether the bell is connected to all of its
-triangles. Under a pragmatically enriched reading, participants would
-withhold a truth-value judgement at this stage until further
+in particular the enrichment of *some* to *some but not all*. In the
+critical trials of this experiments, subjects must judge a sentence
+like "The bell is connected to some of the triangles" true or false
+with respect to a picture, in which possible connections between bell
+and triangles are only partially revealed. Under a semantic reading of
+*some*, subjects would then judge the sentence true in a situation in
+which they can ascertain that there are at least some relevant connection,
+while still uncertain as to whether the bell is connected to all of
+the triangles. Under a pragmatically enriched reading, participants
+would withhold a truth-value judgement at this stage until further
 information is available.
 
 
